@@ -1,0 +1,40 @@
+.solar-container{
+
+}
+
+.solar-cell{
+    display: flex;
+    align-items: center;
+}
+
+.solar-orbit{
+    margin: 0.5em 1em;
+    width: 10em;
+    display: flex;
+    align-items: center;
+    align-content: center;
+    justify-content: space-around;
+}
+
+.solar-star{
+    width: 8em;
+    height: 8em;
+    border-radius: 100%;
+    background: radial-gradient(circle, rgba(250, 190, 0, 1) 0%, rgba(250, 190, 0, 1) 25%, rgba(250, 190, 0, 0.90) 95%, rgba(250, 190, 0, 0.65) 100%);
+    box-shadow: 0 0 8px rgba(160, 160, 160, 0.75);
+}
+
+.solar-planet{
+    width: 2em;
+    height: 2em;
+    border-radius: 100%;
+    background: radial-gradient(circle, rgb(11, 166, 250) 0%, rgb(11, 166, 250) 25%, rgba(11, 166, 250,0.75) 95%, rgba(11, 166, 250, 0.5) 100%);
+    box-shadow: 0 0 8px rgba(160, 160, 160, 0.75);
+}
+.solar-moon{
+    width: 1em;
+    height: 1em;
+    border-radius: 100%;
+    background: radial-gradient(circle, rgba(220,220,220,1) 0%, rgba(220,220,220,1) 25%, rgba(180,180,180,1) 95%, rgb(160, 160, 160) 100%);
+    box-shadow: 0 0 8px rgba(160, 160, 160, 0.75);
+}

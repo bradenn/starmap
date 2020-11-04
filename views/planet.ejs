@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="en">
+<%- include('partials/header.ejs') %>
+<body>
+<h3><%= planets[0].name %></h3>
+<div class="system-view" id="canvas">
+    <div class="solar-cell">
+        <div class="solar-orbit">
+            <div class="solar-planet"
+                 style="width: 8em; height: 8em;"></div>
+        </div>
+        <div class="solar-meta">
+            <a href="/planets/<%= planets[0].id %>"><%= planets[0].name %></a>
+        </div>
+    </div>
+    <% if(moons.length >= 1) { %>
+        <% let sort = moons.sort((a, b) => a.radius - b.radius);
+            let min = sort[0].radius;
+            let max = sort[sort.length - 1].radius;
+        moons.forEach(planet => { %>
+            <div class="solar-cell">
+                <div class="solar-orbit">
+                    <div class="solar-moon"
+                         style="width: <%= map(planet.radius, min, max) %>em !important; height: <%= map(planet.radius, min, max) %>em !important;"></div>
+                </div>
+                <div class="solar-meta">
+                    <a href="/planets/<%= planet.id %>"><%= planet.name %></a>
+                </div>
+            </div>
+        <% }) %>
+    <% } %>
+
+</div>
+</body>
+<%
+function map(value, min, max) {
+    let low1 = min;
+    let high1 = max;
+    let low2 = 0.5;
+    let high2 = 2;
+    return low2 + (high2 - low2) * (value - low1) / (high1 - low1);
+}
+%>
+<script src="/js/system.js"></script>
+</html>

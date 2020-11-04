@@ -1,0 +1,97 @@
+body{
+    /*margin: 0;*/
+    background-color: rgba(22, 22, 22, 1);
+    color: white;
+    font-family: "IBM Plex Sans Light";
+}
+
+a{
+    color: inherit;
+    text-decoration: none;
+}
+
+table{
+    border: 1px solid #ccc;
+}
+
+th{
+    border: 1px solid #ccc;
+}
+
+.space{
+    width: 100%;
+    display: flex;
+    flex: 1;
+    flex-direction: row;
+    flex-grow: inherit;
+    justify-content: center;
+    align-content: center;
+    border: 1px solid #ccc;
+}
+
+.system{
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+    flex-grow: inherit;
+    justify-content: flex-start;
+    align-content: flex-start;
+    /*border: 1px solid #ccc;*/
+}
+
+.orbit{
+
+    display: flex;
+    flex: 1;
+    flex-grow: 0;
+    justify-content: flex-start;
+    align-content: flex-start;
+    align-items: center;
+    vertical-align: center;
+    flex-direction: row;
+    /*border: 1px solid #ccc;*/
+}
+
+.star{
+    margin: 1em;
+    width: 8em;
+    height: 8em;
+    background-color: orange;
+    border-radius: 100%;
+}
+
+.planet{
+    margin: 0.25em;
+    text-align: center;
+    width: 4em;
+    height: 4em;
+    background-color: dodgerblue;
+    border-radius: 100%;
+}
+
+.moon{
+    margin: 1em;
+    width: 1em;
+    height: 1em;
+    background-color: gray;
+    border-radius: 100%;
+}
+
+.card{
+    width: calc(33% - 4em);
+    margin: 0.5em;
+    border-radius: 8px;
+    padding: 1em;
+    background-color: rgba(44, 44, 44, 0.75);
+}
+
+.grid{
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: flex-start;
+}
+
+
