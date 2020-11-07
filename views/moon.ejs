@@ -1,7 +1,7 @@
 <!doctype html>
 <html lang="en">
 <%- include('partials/header.ejs') %>
-<%- include('partials/title.ejs',{title: `Planet ${planet.name}`}) %>
+<%- include('partials/title.ejs',{title: `Moon ${moon.name}`}) %>
 <body>
 <div class="flex-container">
     <div class="flex-container-element" style="height: 100%; flex: 0.33 0.33; margin-top: 1em;">
@@ -10,18 +10,17 @@
         </div>
         <div class="card">
             <div class="card-header">
-                <a href="/planets/<%= planet.id %>">
-                    <h3><%= planet.name %></h3>
+                <a href="/planets/<%= moon.id %>">
+                    <h3><%= moon.name %></h3>
                 </a>
-                <div><%= planet.distanceToArrival %> Light Seconds</div>
             </div>
             <div class="card-body">
                 <div class="flex-list">
-                    <% Object.keys(planet).map(ln => { %>
-                        <% if(planet[ln]){ %>
+                    <% Object.keys(moon).map(ln => { %>
+                        <% if(moon[ln]){ %>
                             <div class="flex-list-element">
                                 <div><strong><%= ln %></strong></div>
-                                <div><%= planet[ln] %></div>
+                                <div><%= moon[ln] %></div>
                             </div>
                         <% } %>
                     <% }) %>
@@ -39,26 +38,9 @@
                              style="width: 8em !important; height: 8em !important;"></div>
                     </div>
                     <div class="solar-meta">
-                        <%= planet.name %>
+                        <%= moon.name %>
                     </div>
                 </div>
-                <%
-                let safe = (a) => (typeof a !== 'undefined') ? a.radius : 0;
-                let sort = moons.slice(0, 9).sort((a, b) => safe(a) - safe(b));
-                let min = safe(sort[0]);
-                let max = safe(sort[sort.length - 1]);
-                moons.forEach(moon => { %>
-                    <div class="solar-cell">
-                        <div class="solar-orbit">
-                            <div class="solar-moon"
-                                 style="width: <%= map(moon.radius, min, max) %>em !important; height: <%= map(moon.radius, min, max) %>em !important;"></div>
-                        </div>
-                        <div class="solar-meta">
-                            <a href="/moons/<%= moon.id %>"><%= moon.name %></a>
-                        </div>
-                    </div>
-                <% }) %>
-
             </div>
         </div>
     </div>

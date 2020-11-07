@@ -4,6 +4,7 @@
   "dependencies": {
     "ejs": "^3.1.5",
     "express": "^4.17.1",
+    "performance-now": "^2.1.0",
     "pg": "^8.3.3"
   }
 }

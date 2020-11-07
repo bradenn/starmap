@@ -9,16 +9,20 @@ router.get('/', (req, res) => {
 });
 
 router.get('/:id', (req, res) => {
-    db.query(`SELECT * FROM planets WHERE "id"=$1::text`, [req.params.id]).then(planets => {
-        Promise.all(planets.rows.map(planet => db.query(`SELECT * FROM moons WHERE "planetId"=$1::text`, [planet.id]))).then(r => {
-            let moons = [];
-            r.map(a => a.rows.map(b => moons.push(b)));
-            res.render("planet", {
-                planets: planets.rows,
-                moons: moons
-            });
+    db.query(`SELECT * FROM planets
+                    WHERE "id"=$1::text`,
+        [req.params.id])
+        .then(planets => {
+            db.query(`SELECT * FROM moons
+                    WHERE "planetId"=$1::text`,
+                [req.params.id])
+                .then(moons => {
+                    res.render("planet", {
+                        planet: planets.rows[0],
+                        moons: moons.rows
+                    });
+                }).catch(err => console.log(err));
         }).catch(err => console.log(err));
-    }).catch(err => console.log(err));
 });
 
 module.exports = router;

@@ -4,20 +4,9 @@
 <%- include('partials/title.ejs') %>
 <body>
 <div class="flex-list">
-    <div class="flex-list-element">
+    <div class="flex-list-element mr-1">
         <h4>Explore Systems</h4>
-        <div>
-            <%
-            function changePage(dir) {
-                let current = parseInt(url.split('/')[3]);
-                if (current === 1 && !dir) return current;
-                return dir?current + 1:current - 1;
-            }
-            %>
-            <a href="/systems/pg/<%= changePage(false) %>">< back</a>
-            | <%= url.split('/')[3] %> |
-            <a href="/systems/pg/<%= changePage(true) %>">next ></a>
-        </div>
+        <a href="/systems/pg/2">View More</a>
     </div>
 </div>
 <div class="flex-container">
@@ -46,5 +35,24 @@
         </div>
     <% }) %>
 </div>
+<div class="flex-list">
+    <div class="flex-list-element mr-1">
+        <h4>Visualizations</h4>
+        <a href="/charts">View Full</a>
+    </div>
+</div>
+<div class="flex-container">
+    <iframe src="/charts" class="iframe"></iframe>
+</div>
 </body>
+<%
+function map(value, min, max) {
+    let low1 = min;
+    let high1 = max;
+    let low2 = 0.5;
+    let high2 = 8;
+    return low2 + (high2 - low2) * (value - low1) / (high1 - low1);
+}
+%>
+<script src="/js/system.js"></script>
 </html>

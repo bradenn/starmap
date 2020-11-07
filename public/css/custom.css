@@ -1,24 +1,30 @@
-body{
+body {
     /*margin: 0;*/
     background-color: rgba(22, 22, 22, 1);
     color: white;
     font-family: "IBM Plex Sans Light";
+    margin: 1em 1em;
+
 }
 
-a{
+.m-0{
+    margin: 0;
+}
+
+a {
     color: inherit;
     text-decoration: none;
 }
 
-table{
+table {
     border: 1px solid #ccc;
 }
 
-th{
+th {
     border: 1px solid #ccc;
 }
 
-.space{
+.space {
     width: 100%;
     display: flex;
     flex: 1;
@@ -29,7 +35,7 @@ th{
     border: 1px solid #ccc;
 }
 
-.system{
+.system {
     display: flex;
     flex: 1;
     flex-direction: column;
@@ -39,7 +45,11 @@ th{
     /*border: 1px solid #ccc;*/
 }
 
-.orbit{
+.chartjs-size-monitor{
+    color: rgba(255, 255, 255, 0.75);
+}
+
+.orbit {
 
     display: flex;
     flex: 1;
@@ -52,7 +62,7 @@ th{
     /*border: 1px solid #ccc;*/
 }
 
-.star{
+.star {
     margin: 1em;
     width: 8em;
     height: 8em;
@@ -60,7 +70,7 @@ th{
     border-radius: 100%;
 }
 
-.planet{
+.planet {
     margin: 0.25em;
     text-align: center;
     width: 4em;
@@ -69,7 +79,7 @@ th{
     border-radius: 100%;
 }
 
-.moon{
+.moon {
     margin: 1em;
     width: 1em;
     height: 1em;
@@ -77,15 +87,7 @@ th{
     border-radius: 100%;
 }
 
-.card{
-    width: calc(33% - 4em);
-    margin: 0.5em;
-    border-radius: 8px;
-    padding: 1em;
-    background-color: rgba(44, 44, 44, 0.75);
-}
-
-.grid{
+.grid {
     width: 100%;
     display: flex;
     flex-wrap: wrap;
@@ -94,4 +96,106 @@ th{
     align-items: flex-start;
 }
 
+.flex-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+}
 
+.flex-center {
+    justify-content: center;
+}
+
+.flex-container:last-child {
+    margin-right: 0;
+}
+
+.flex-container-element {
+    flex: 1 1 25%;
+    max-width: 50vw;
+    margin-right: 0.75em;
+    margin-bottom: 0.75em;
+}
+
+.flex-list {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    justify-content: flex-start;
+}
+
+.flex-inline {
+    display: flex;
+    flex-direction: row !important;
+    justify-content: flex-start !important;
+}
+
+.flex-inline-element{
+    margin-right: 1em;
+}
+.flex-inline:last-child {
+    margin-right: 0;
+}
+
+
+.flex-list-element {
+    flex: 1 1 auto;
+    color: rgba(255, 255, 255, 0.5);
+    margin-bottom: 0.25em;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+
+.card{
+    border: 1px solid rgba(40, 40, 44, 0.90);
+    border-radius: 4px;
+    padding: 1em;
+    background-color: rgba(38, 38, 40, 0.75);
+}
+
+.card > .card-header {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 0.5em;
+}
+
+.back{
+    margin-top: -3em;
+}
+
+h3 {
+    margin: 0;
+}
+
+.iframe{
+    width: 100vw;
+    height: 50vh;
+    border: none;
+    overflow:hidden !important;
+}
+
+a{
+    color: #3498db;
+}
+
+.header-title{
+    margin: 0;
+    color: rgba(255, 255, 255, 0.8)
+}
+
+html::-webkit-scrollbar {
+    width: 0.5em;
+    background-color: rgba(38, 38, 40, 0.75);
+    border-radius: 8px;
+}
+
+html::-webkit-scrollbar-thumb {
+    background-color: rgba(22, 22, 22, 1);
+    width: 0.45em!important;
+    border: 1px solid rgba(38, 38, 40, 0.90);
+    border-radius: 8px;
+}
